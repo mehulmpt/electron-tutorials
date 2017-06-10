@@ -1,0 +1,15 @@
+{
+  "name": "crazyimages",
+  "version": "1.0.0",
+  "description": "Best image editor (better than instagram)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "codedamn",
+  "license": "ISC",
+  "dependencies": {
+    "electron-screenshot": "^1.0.4",
+    "image-size": "^0.5.4"
+  }
+}

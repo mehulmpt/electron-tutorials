@@ -1,0 +1,27 @@
+<div id="imageEditor">
+	<div id="preview">
+		<div id="imagePreview">
+			<img ng-src="{{imagePath}}" id="mainImage">
+		</div>
+		<div id="usefulButtons">
+			<div ng-click="change()">Change</div>
+			<div ng-click="save()">Save</div>
+		</div>
+	</div>
+	<div id="imageControls" ng-show="!controlsActive">
+		<div class="effectType" ng-repeat="(effect, props) in effects" ng-click="imageEffect(effect)">
+			{{effect}}
+		</div>
+	</div>
+	<div id="liveEffects" ng-show="controlsActive">
+		<div class="effect" ng-repeat="(effect, props) in effects" ng-show="effect == activeEffect">
+			<div class="effectName">{{effect}}</div>
+			<div class="amountDone">{{props.val + props.delim}}</div>
+			<div class="range-slider">
+				<input type="range" class="slider-input" min="{{props.min}}" max="{{props.max}}" ng-value="props.val" ng-model="props.val" ng-change="setEffect()">
+			</div>
+			<div class="goBack" ng-click="hideThis()">Done</div>
+		</div>
+
+	</div>
+</div>
